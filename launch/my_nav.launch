@@ -1,0 +1,11 @@
+<launch>
+  <arg name="num_runs"     default="1"/>
+
+  <include file="$(find my_nav)/launch/move_base.launch" />
+
+  <node pkg="my_nav" type="my_nav_node" name="my_nav_node" output="screen" required="true" >
+    <param name="waypoints_filename" value="config/waypoints.yaml" />
+    <param name="ref_frame" value="map" />
+    <param name="num_runs" value="$(arg num_runs)"/>
+  </node>
+</launch>

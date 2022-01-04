@@ -1,0 +1,59 @@
+# If you wonder each parameters' meaning,
+# Read "http://wiki.ros.org/base_local_planner".
+TrajectoryPlannerROS:
+
+# Robot Configuration Parameters
+  # ~<name>/acc_lim_x (double, default: 2.5)
+  # ~<name>/acc_lim_y (double, default: 2.5)
+  # ~<name>/acc_lim_theta (double, default: 3.2)
+  # ~<name>/max_vel_x (double, default: 0.5)
+  # ~<name>/min_vel_x (double, default: 0.1)
+  # ~<name>/max_vel_theta (double, default: 1.0)
+  # ~<name>/min_vel_theta (double, default: -1.0)
+  # ~<name>/min_in_place_vel_theta (double, default: 0.4)
+  acc_lim_x: 0.5
+  acc_lim_y: 0.0
+  acc_lim_theta: 0.02
+  max_vel_x: 1.0
+  min_vel_x: 0.4
+  max_vel_theta: 0.5
+  min_vel_theta: -0.5
+  min_in_place_vel_theta: 0.2
+
+# Differential-drive robot configuration
+  holonomic_robot: false
+
+# Goal Tolerance Parameters >>> Remain default
+  # ~<name>/yaw_goal_tolerance (double, default: 0.05)
+  # ~<name>/xy_goal_tolerance (double, default: 0.10)
+  # ~<name>/latch_xy_goal_tolerance (bool, default: false)
+  yaw_goal_tolerance: 0.1
+  xy_goal_tolerance: 0.15
+
+# Forward Simulation Parameters
+  # ~<name>/sim_time (double, default: 1.0)
+  # ~<name>/sim_granularity (double, default: 0.025)
+  # ~<name>/angular_sim_granularity (double, default: ~<name>/sim_granularity)
+  # ~<name>/vx_samples (integer, default: 3)
+  # ~<name>/vtheta_samples (integer, default: 20)
+  # ~<name>/controller_frequency (double, default: 20.0)
+  sim_time: 2.0
+  sim_granularity: 0.02
+  vx_samples: 3
+  vtheta_samples: 20
+  controller_frequency: 20.0
+
+# Trajectory Scoring Parameters
+  # ~<name>/meter_scoring (bool, default: false)
+  # ~<name>/pdist_scale (double, default: 0.6)
+  # ~<name>/gdist_scale (double, default: 0.8)
+  # ~<name>/occdist_scale (double, default: 0.01)
+  # ~<name>/heading_lookahead (double, default: 0.325)
+  # ~<name>/heading_scoring (bool, default: false)
+  # ~<name>/heading_scoring_timestep (double, default: 0.8)
+  # ~<name>/dwa (bool, default: true)
+  # ~<name>/publish_cost_grid_pc (bool, default: false)
+  # ~<name>/global_frame_id (string, default: odom)
+  meter_scoring: true
+  dwa: true
+  publish_cost_grid_pc: true
